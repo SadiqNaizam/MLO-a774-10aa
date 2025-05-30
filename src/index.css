@@ -1,57 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 240 20% 96.5%; /* PRD: #F3F3F9 */
+    --foreground: 210 11.1% 14.5%; /* PRD: #212529 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%; /* PRD: #FFFFFF (surface) */
+    --card-foreground: 210 11.1% 14.5%; /* PRD: #212529 (primaryText on surface) */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%; /* PRD: #FFFFFF (surface) */
+    --popover-foreground: 210 11.1% 14.5%; /* PRD: #212529 (primaryText on surface) */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 170.9 89.1% 37.1%; /* PRD: #0AB39C (accent) */
+    --primary-foreground: 0 0% 100%; /* Assumed white for contrast */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 91.4%; /* PRD: #E9E9E9 (sidebar color, used as secondary bg) */
+    --secondary-foreground: 210 11.1% 14.5%; /* PRD: #212529 (primaryText on secondary) */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 91.4%; /* PRD: #E9E9E9 (sidebar color, used as muted bg) */
+    --muted-foreground: 228 9.3% 56.5%; /* PRD: #878A99 (secondaryText) */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 170.9 89.1% 37.1%; /* PRD: #0AB39C (same as primary for shadcn accent) */
+    --accent-foreground: 0 0% 100%; /* Assumed white for contrast */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 10.1 85.7% 61.2%; /* PRD: #F06548 (chartRed) */
+    --destructive-foreground: 0 0% 100%; /* Assumed white for contrast */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 10.5% 92%; /* PRD: #E9EBEC */
+    --input: 210 10.5% 92%; /* PRD: #E9EBEC (same as border) */
+    --ring: 170.9 89.1% 37.1%; /* PRD: #0AB39C (accent, for focus rings) */
 
-    --radius: 0.5rem;
+    --radius: 0.375rem; /* PRD: effects.borderRadius.default "rounded-md" (0.375rem) */
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom PRD colors */
+    --prd-chart-red: 10.1 85.7% 61.2%; /* PRD: #F06548 */
+    --prd-chart-blue: 201.7 71.6% 51%; /* PRD: #299CDB */
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Sidebar specific theming from existing structure, mapped to PRD values */
+    --sidebar-background: 0 0% 91.4%; /* PRD: #E9E9E9 (sidebar) */
+    --sidebar-foreground: 210 11.1% 14.5%; /* PRD: #212529 (primaryText on sidebar) */
+    
+    /* Interactive elements within sidebar, themed like main primary/accent */
+    --sidebar-primary: 170.9 89.1% 37.1%; /* Same as --primary */
+    --sidebar-primary-foreground: 0 0% 100%; /* Same as --primary-foreground */
+    --sidebar-accent: 170.9 89.1% 37.1%; /* Same as --accent */
+    --sidebar-accent-foreground: 0 0% 100%; /* Same as --accent-foreground */
+    --sidebar-border: 210 10.5% 92%; /* Same as --border */
+    --sidebar-ring: 170.9 89.1% 37.1%; /* Same as --ring */
 
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Font variable */
+    --font-nunito: "Nunito", sans-serif;
   }
 
   .dark {
+    /* Dark mode variables - PRD does not specify dark theme, so these are unchanged from original */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -79,14 +85,20 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+
+    /* Dark mode sidebar variables from original file */
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary: 224.3 76.3% 48%; 
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* PRD specific colors dark mode - not specified, so they will inherit light mode values or need explicit definition */
+    /* --prd-chart-red: ...; */
+    /* --prd-chart-blue: ...; */
   }
 }
 
@@ -97,5 +109,10 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-nunito);
+    font-size: 0.875rem; /* 14px, PRD typography.body is text-sm */
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
